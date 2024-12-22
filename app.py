@@ -13,7 +13,6 @@ import re
 
 
 load_dotenv()
-os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
@@ -142,7 +141,6 @@ def main():
 
     user_question = st.text_input("Ask a Question from the PDF Files")
     
-
     if user_question:
         user_input(user_question)
         
@@ -150,8 +148,7 @@ def main():
         call_me()
     elif user_question == "book appointment":
         appointment()
-        
-        
+          
     with st.sidebar:
         st.title("Menu:")
         pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
@@ -169,7 +166,6 @@ def main():
                 get_vector_store(text_chunks)
                 st.success("Processing complete! You can now ask questions.")
                 
-        
 
 if __name__ == "__main__":
     main()
