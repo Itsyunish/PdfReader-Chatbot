@@ -2,6 +2,3 @@
 venv/
 
 
-# pickle file
-*.pkl
-
